@@ -1,4 +1,3 @@
-# test_schema.py
 from schema.types import BasicType
 from schema.field import FieldDef
 from schema.model import ModelDef

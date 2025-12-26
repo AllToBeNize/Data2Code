@@ -1,0 +1,15 @@
+setup.py
+src/backends/__init__.py
+src/backends/base.py
+src/backends/csharp/__init__.py
+src/backends/csharp/exporter.py
+src/backends/csharp/templates.py
+src/backends/csharp/types.py
+src/my_project.egg-info/PKG-INFO
+src/my_project.egg-info/SOURCES.txt
+src/my_project.egg-info/dependency_links.txt
+src/my_project.egg-info/top_level.txt
+src/schema/__init__.py
+src/schema/field.py
+src/schema/model.py
+src/schema/types.py

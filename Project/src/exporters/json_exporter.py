@@ -58,7 +58,7 @@ class JSONExporter(BaseDataExporter):
             mapping[model_name] = out_file_name
 
         # 写 mapping.json
-        mapping_file = os.path.join(output_dir, "mapping.json")
+        mapping_file = os.path.join(output_dir, "_mapping.json")
         with open(mapping_file, "w", encoding="utf-8") as f:
             json.dump(mapping, f, ensure_ascii=False, indent=4)
         print(f"生成映射文件 {mapping_file}")

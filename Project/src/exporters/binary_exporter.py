@@ -55,7 +55,7 @@ class BinaryExporter(BaseDataExporter):
             mapping[model_name] = out_file_name
 
         # 生成 mapping.json
-        mapping_file = os.path.join(output_dir, "mapping.json")
+        mapping_file = os.path.join(output_dir, "_mapping.json")
         with open(mapping_file, "w", encoding="utf-8") as f:
             import json
             json.dump(mapping, f, ensure_ascii=False, indent=4)

@@ -5,6 +5,8 @@ from schema.field import FieldDef
 from schema.types import EnumType
 
 class CSharpBackend:
+    file_ext = "cs"  # 文件扩展名
+
     def export_model(self, model: ModelDef) -> str:
         lines = []
         for field in model.fields:
@@ -17,11 +19,16 @@ class CSharpBackend:
                 name=field.name,
                 comment=comment
             ))
-        return CLASS_TEMPLATE.format(name=model.name, fields="\n".join(lines))
+        return CLASS_TEMPLATE.format(
+            name=model.name,
+            fields="\n".join(lines)
+        )
 
     def export_enum(self, enum: EnumType) -> str:
-        members_lines = [ENUM_MEMBER_TEMPLATE.format(name=name, value=value)
-                         for name, value in enum.members.items()]
+        members_lines = [
+            ENUM_MEMBER_TEMPLATE.format(name=name, value=value)
+            for name, value in enum.members.items()
+        ]
         return ENUM_TEMPLATE.format(
             name=enum.name,
             underlying=enum.underlying or "int",

@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from .field import FieldDef
+from schema.field import FieldDef
 
 @dataclass
 class ModelDef:

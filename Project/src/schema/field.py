@@ -1,8 +1,9 @@
 from dataclasses import dataclass
-from .types import BasicType
+from schema.types import SchemaType
 
 @dataclass
 class FieldDef:
     name: str
-    type: BasicType
-    comment: str
+    type: SchemaType
+    comment: str = ""
+    is_primary: bool = False

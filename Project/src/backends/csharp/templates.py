@@ -1,10 +1,14 @@
-def model_template(model, type_map):
-    lines = [f"public class {model.name}", "{"]
+CLASS_TEMPLATE = """public class {name}
+{{
+{fields}
+}}
+"""
 
-    for f in model.fields:
-        cs_type, _ = type_map[f.type.name]
-        lines.append(f"    /// <summary>{f.comment}</summary>")
-        lines.append(f"    public {cs_type} {f.name};\n")
+ENUM_TEMPLATE = """public enum {name} : {underlying}
+{{
+{members}
+}}
+"""
 
-    lines.append("}")
-    return "\n".join(lines)
+FIELD_TEMPLATE = "    public {type} {name} {{ get; set; }}{comment}"
+ENUM_MEMBER_TEMPLATE = "    {name} = {value},"
